@@ -19,4 +19,7 @@ Want to contribute?
 -------------------
 If you like the idea and want to contribute with the project, contact me at GTalk or E-Mail: eu@gabrielf.com
 
+Special Thanks to:
+ - Gustavo Bennemann
+
 Thank you for your interest. :-)
