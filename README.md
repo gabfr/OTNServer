@@ -10,7 +10,9 @@ Node.js can be much faster than C++ when talking about I/O. And of course, it wi
 Creators of the original Open Tibia Protocol
 --------------------------------------------
 We use as guide, this C++ sources of the protocol implementation:
+
 https://github.com/opentibia/server
+
 The official contributors and creators of that implementation version you can see at the link up there.
 
 Want to contribute?
