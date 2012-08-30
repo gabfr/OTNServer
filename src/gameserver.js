@@ -11,19 +11,14 @@ function GameServer() {
             //var msg = new NetworkMessage(mBuf);
             
             // ON LOGIN
-            var msg = new NetworkMessage(mBuf);
+            var msg = new NetworkMessage();
+            msg.m_MsgBuf = mBuf;
             var packSize = msg.DecodeHeader();
             if (packSize <= 0 || packSize >= msg.NETWORKMESSAGE_MAXSIZE - 16) {
                 console.log('Packet with wrong size! Possibly attack?');
             }
             console.log('Packet size: ' + packSize);
-            var recvChecksum = msg.GetU32();
-            var checksum = 0;
-            var recvChecksumLength = msg.MsgSize - msg.ReadPos - 4;
-            if (recvChecksumLength > 0) {
-                checksum = msg.GetChecksum(6);
-            }
-            if (recvChecksum == checksum) {
+            if (msg.Checksum()) {
                 console.log('ok!');
             } else {
                 console.log('n');
